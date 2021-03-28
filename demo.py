@@ -6,11 +6,13 @@ print(os.environ['EMAIL_PKT'])
 SENHA_PKT = os.environ['SENHA_PKT']
 EMAIL_PKT = os.environ['EMAIL_PKT']
 
-webdriver.Chrome("/home/keymaker/git/webscraping/chromedriver")
+#webdriver.Chrome("/home/keymaker/git/webscraping/chromedriver")
+
+#Abre Chrome
 browser = webdriver.Chrome("/home/keymaker/git/webscraping/chromedriver")
 browser.get("https://subscription.packtpub.com/login")
-browser.execute_script("alert('hello')") # abre um alerta no browser
-browser.save_screenshot("test.png")
+
+#Login:
 input = browser.find_element_by_css_selector("#login-input-email")
 input.send_keys(EMAIL_PKT)
 input = browser.find_element_by_css_selector("#login-input-password")
